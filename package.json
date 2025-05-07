@@ -6,16 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "load:token-list": "bun run ./scripts/load-tokens.ts",
+    "load:data": "bun run ./scripts/load-data.ts"
   },
   "dependencies": {
+    "@nervosnetwork/ckb-sdk-core": "^0.109.5",
+    "next": "15.3.2",
+    "papaparse": "^5.5.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "typescript": "^5",
     "@types/node": "^20",
+    "@types/papaparse": "^5.3.16",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@tailwindcss/postcss": "^4",
