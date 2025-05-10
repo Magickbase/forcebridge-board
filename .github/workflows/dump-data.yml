@@ -1,4 +1,4 @@
-name: Load Data and Commit CSV
+name: Dump Data and Commit CSV
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:      # 允许手动触发
 
 jobs:
-  load-and-commit:
+  dump-and-commit:
     runs-on: ubuntu-latest
     
     steps:
@@ -28,8 +28,8 @@ jobs:
         run: |
           mkdir -p data/history
 
-      - name: Run data loading script
-        run: bun run load:data
+      - name: Run data dumping script
+        run: bun run dump:data
 
       - name: Configure Git
         run: |

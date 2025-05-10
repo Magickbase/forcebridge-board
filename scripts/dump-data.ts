@@ -10,6 +10,7 @@ import { isGwV0, isGwV1 } from '@/lib/gw'
 
 const main = async () => {
   const list = []
+  const ids = new Set()
 
   for (const token of tokens) {
     const typeScript = {
@@ -34,7 +35,12 @@ const main = async () => {
 
       for (const cell of cells.objects) {
         const value = BigInt(ckb.utils.toBigEndian(cell.output_data))
+        if (value <= 0n) {
+          continue
+        }
         count.total += value
+        const id = `${cell.output.lock.code_hash}-${cell.output.lock.hash_type}-${cell.output.lock.args}`
+        ids.add(id)
         if (isGwV0(cell.output.lock)) {
           count.gw.v0 += value
         } else if (isGwV1(cell.output.lock)) {
@@ -51,7 +57,8 @@ const main = async () => {
       token: token.args,
       total: count.total.toString(),
       gw_v0: count.gw.v0.toString(),
-      gw_v1: count.gw.v1.toString()
+      gw_v1: count.gw.v1.toString(),
+      addrs: ids.size,
     }
     list.push(data)
   }
