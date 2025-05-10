@@ -38,6 +38,6 @@ export function loadHistory(): History[] {
     })
   }
 
-  return entries.sort((a, b) => b.timestamp - a.timestamp)
+  return entries.sort((a, b) => a.timestamp - b.timestamp)
 }
 

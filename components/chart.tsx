@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/chart"
 import { BigNumber } from "bignumber.js"
 import { ValueType } from "recharts/types/component/DefaultTooltipContent"
+import { formatAmount } from '@/lib/utils'
 
 export const description = "An interactive bar chart"
 
@@ -42,20 +43,12 @@ export interface Data {
   value: number
 }
 
-const formatAmount = (value: number, decimal: number) => {
-  return BigNumber(value).dividedBy(10 ** decimal).toFixed(2)
-}
 
 const CustomChart = ({ list, token }: { list: Array<Data>, token: { logo: string, symbol: string, decimal: number, args: string } }) => {
   const formattedList = list.map((item) => ({
     ...item,
     value: formatAmount(item.value, token.decimal),
   }))
-
-  if (token.symbol === "USDT|bsc") {
-    console.log(formattedList)
-  }
-
 
   const total = formattedList[formattedList.length - 1]
 
@@ -65,9 +58,11 @@ const CustomChart = ({ list, token }: { list: Array<Data>, token: { logo: string
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
           <CardTitle>
             <img src={token.logo.replace('https://cryptologos.cc', '')} alt={token.symbol} width={24} height={24} className="mr-2 inline-block h-6 w-6" />
-            - {token.symbol}</CardTitle>
+            {token.symbol}</CardTitle>
           <CardDescription>
-            <span>Find More information about <b>{token.symbol}</b> on <Link className="underline font-bold" href={`https://explorer.nervos.org/sudt/${token.args}`} target="_blank" rel="noopener noreferrer">CKB Explorer</Link></span>
+            <span>Find More information about <b>{token.symbol}</b> on <Link className="underline font-bold" href={`https://explorer.nervos.org/sudt/${token.args}`} target="_blank" rel="noopener noreferrer">CKB Explorer</Link>
+
+            </span>
           </CardDescription>
         </div>
         <div className="flex">
@@ -75,7 +70,7 @@ const CustomChart = ({ list, token }: { list: Array<Data>, token: { logo: string
             className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
           >
             <span className="text-xs text-muted-foreground">
-              Total
+              Latest
             </span>
             <span className="text-lg font-bold leading-none sm:text-3xl">
               {BigNumber(total.value).toFormat()}
