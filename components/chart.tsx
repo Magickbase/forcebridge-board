@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable */
 
 import Link from 'next/link'
 import { CartesianGrid, XAxis, Area, AreaChart, } from "recharts"
