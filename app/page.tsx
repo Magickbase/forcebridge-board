@@ -4,6 +4,9 @@ import Timeline from '@/components/ui/timeline'
 import { generateBiweeklyReports } from '@/lib/report'
 import { formatAmount } from '@/lib/utils'
 import { BigNumber } from 'bignumber.js'
+import Link from 'next/link'
+import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
+import { LinkPreview } from '@/components/ui/link-preview'
 
 export const dynamic = 'force-static'
 export const revalidate = 3600 // revalidate every hour
@@ -83,6 +86,49 @@ export default function Home() {
 
   return (
     <main className="mx-auto py-20 flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-6xl">
+      <div
+        className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10">
+        <div className="max-w-7xl mx-auto py-2">
+          <h1 className="text-4xl font-bold text-zinc-700 md:text-6xl mb-4 text-black dark:text-white max-w-4xl">
+            Force Bridge Closure
+          </h1>
+          <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-xl">
+            To align with the evolving landscape of the CKB ecosystem, we are sunsetting Force Bridge and Godwoken.
+          </p>
+          <p className="flex gap-1">
+            Please withdraw your assets via
+            <LinkPreview className="underline font-bold" imageSrc="/previews/godwoken-bridge-preview.png" isStatic url="https://bridge.godwoken.io/#/v1/">Godwoken Bridge</LinkPreview>
+            and
+            <LinkPreview className="underline font-bold" imageSrc="/previews/force-bridge-preview.png" isStatic url="https://forcebridge.com/">Force Bridge</LinkPreview>
+            before the deadline.
+          </p>
+          <Link href="/announcement" >
+            <InteractiveHoverButton className="rounded-md capitalize my-8">
+              Read the full announcement
+            </InteractiveHoverButton>
+          </Link>
+        </div>
+        <div>
+          <iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vTNj1JOp7z4is5gA-OBqJKOb8mpq3v7bZKI6bzT53W7CD1d5Qt10hE7Owx5TWr6sJ1yJArp2P79l5EV&font=Default&lang=en&initial_zoom=2&width=100%25&height=650" width='100%' height='650'></iframe>
+        </div>
+
+        <ul className="list-disc w-min ml-auto text-nowrap">
+          <li>
+            <div className="flex gap-2 justify-between">
+              <b>Godwoken Exit Ends:</b>
+              <time dateTime="2025/10/31">Oct 31, 2025</time>
+            </div>
+          </li>
+          <li>
+            <div className="flex gap-2 justify-between">
+              <b >Force Bridge Exit Ends:</b>
+              <time dateTime="2025/11/30" >Nov 30, 2025</time>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
       <Timeline data={updates} />
     </main>
   )
