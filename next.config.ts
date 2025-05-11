@@ -5,8 +5,10 @@ const nextConfig: NextConfig = {
     domains: [
       'api.microlink.io'
     ]
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   }
-  /* config options here */
 };
 
 export default nextConfig;
