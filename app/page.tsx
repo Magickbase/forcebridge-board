@@ -2,7 +2,7 @@ import { loadHistory } from '@/lib/load-history'
 import tokens from '@/data/tokens.json' assert { type: 'json' }
 import Timeline from '@/components/ui/timeline'
 import { generateBiweeklyReports } from '@/lib/report'
-import { formatAmount } from '@/lib/utils'
+import { cn, formatAmount } from '@/lib/utils'
 import { BigNumber } from 'bignumber.js'
 import Link from 'next/link'
 import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
@@ -49,15 +49,25 @@ export default function Home() {
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
               <span className="text-sm text-neutral-600 dark:text-neutral-400">Amount:</span>
-              <span className={`text-sm font-medium ${!isTotalZero && (isTotalPositive ? 'text-green-500' : 'text-red-500')}`}>
-                {!isTotalZero && isTotalPositive ? '+' : ''}{formatAmount(total, tokenInfo.decimal)}
+              <span className={cn(
+                `text-sm font-medium`,
+                isTotalPositive && 'text-green-500',
+                !isTotalZero && !isTotalPositive && 'text-red-500',
+                isTotalZero && 'text-neutral-500',
+              )}>
+                {!isTotalZero && isTotalPositive ? '+' : ''}{BigNumber(formatAmount(total, tokenInfo.decimal)).toFormat()}
               </span>
             </div>
 
             <div className="flex items-center gap-2">
               <span className="text-sm text-neutral-600 dark:text-neutral-400">Addresses:</span>
-              <span className={`text-sm font-medium ${!isAddrsZero && (isAddrsPositive ? 'text-green-500' : 'text-red-500')}`}>
-                {!isAddrsZero && isAddrsPositive ? '+' : ''}{addrs.toLocaleString()}
+              <span className={cn(`text-sm font-medium`,
+                `text-sm font-medium`,
+                isAddrsPositive && 'text-green-500',
+                !isAddrsZero && !isAddrsPositive && 'text-red-500',
+                isAddrsZero && 'text-neutral-500',)
+              }>
+                {!isAddrsZero && isAddrsPositive ? '+' : ''}{addrs.toFormat()}
               </span>
             </div>
           </div>
