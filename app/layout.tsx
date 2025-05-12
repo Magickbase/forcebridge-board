@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Force Bridge Closure Hub",
-  description: "Force Bridge Closure Hub is the official site for updates on the deprecation of Nervos’ Force Bridge. Access critical announcements, timelines, and weekly withdrawal statistics to ensure a smooth transition.",
+  title: "End of an Era: Force Bridge Subset Hub",
+  description: "Force Bridge Subset Hub is the official site for updates on the deprecation of Nervos’ Force Bridge. Access critical announcements, timelines, and weekly withdrawal statistics to ensure a smooth transition.",
 };
 
 export default function RootLayout({

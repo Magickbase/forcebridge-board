@@ -97,19 +97,18 @@ export default function Home() {
   return (
     <main className="mx-auto py-20 flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-6xl">
       <div
-        className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10">
+        className="w-full bg-white dark:bg-neutral-950 font-sans px-2 md:px-10">
         <div className="max-w-7xl mx-auto py-2">
           <h1 className="text-4xl font-bold text-zinc-700 md:text-6xl mb-4 text-black dark:text-white max-w-4xl">
-            Force Bridge Closure
+            End of an Era: Force Bridge Sunset
           </h1>
-          <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-xl">
+          <p className="text-neutral-700 dark:text-neutral-300 text-sm leading-6 md:text-base max-w-xl">
             To align with the evolving landscape of the CKB ecosystem, we are sunsetting Force Bridge and Godwoken.
           </p>
-          <p className="flex gap-1">
+          <p className="flex gap-x-1 text-nowrap flex-wrap text-neutral-700 dark:text-neutral-300 leading-6 text-sm md:text-base">
             Please withdraw your assets via
-            <LinkPreview className="underline font-bold" imageSrc="/previews/godwoken-bridge-preview.png" isStatic url="https://bridge.godwoken.io/#/v1/">Godwoken Bridge</LinkPreview>
-            and
-            <LinkPreview className="underline font-bold" imageSrc="/previews/force-bridge-preview.png" isStatic url="https://forcebridge.com/">Force Bridge</LinkPreview>
+            <LinkPreview className="underline font-bold text-nowrap" imageSrc="/previews/godwoken-bridge-preview.png" isStatic url="https://bridge.godwoken.io/#/v1/">Godwoken Bridge</LinkPreview> and
+            <LinkPreview className="underline font-bold text-nowrap" imageSrc="/previews/force-bridge-preview.png" isStatic url="https://forcebridge.com/">Force Bridge</LinkPreview>
             before the deadline.
           </p>
           <Link href="/announcement" >

@@ -242,7 +242,7 @@ export const NavbarLogo = () => {
         alt="logo"
         className="h-6 w-6"
       />
-      <span className="font-medium text-black dark:text-white">Force Bridge Closure Hub</span>
+      <span className="font-medium text-black dark:text-white">Force Bridge Sunset Hub</span>
     </Link>
   );
 };
