@@ -11,8 +11,7 @@ export default function Home() {
   const tokenIds = data[0]?.data.map(i => i.token) ?? []
 
   return (
-    <main className="mx-auto py-20 flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-6xl">
-
+    <main className="mx-auto py-20 px-4 flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-6xl xl:px-0">
       <div className="mx-auto">
         <TokenHero tokens={tokens.map(t => t.symbol)} platform="Force Bridge" />
       </div>

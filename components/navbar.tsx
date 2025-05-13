@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import {
   Navbar,
   NavBody,
@@ -7,18 +7,26 @@ import {
   NavbarLogo,
   MobileNavHeader,
   MobileNavToggle,
-  MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
-import { useState } from "react";
+  MobileNavMenu
+} from '@/components/ui/resizable-navbar'
+import { useState } from 'react'
 import { links } from './nav'
 
+const headLinks = [
+  {
+    title: 'Announcement',
+    href: '/announcement'
+  },
+  ...links
+]
+
 const CustomNavbar = () => {
-  const navItems: Array<{ name: string, link: string }> = links.map(i => ({
+  const navItems: Array<{ name: string; link: string }> = headLinks.map((i) => ({
     name: i.title,
-    link: i.href,
+    link: i.href
   }))
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
     <div className="relative w-full">
@@ -31,16 +39,10 @@ const CustomNavbar = () => {
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
+            <MobileNavToggle isOpen={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
           </MobileNavHeader>
 
-          <MobileNavMenu
-            isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
+          <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
             {navItems.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
@@ -55,8 +57,7 @@ const CustomNavbar = () => {
         </MobileNav>
       </Navbar>
     </div>
-  );
+  )
 }
-
 
 export default CustomNavbar
