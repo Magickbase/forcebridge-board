@@ -44,8 +44,8 @@ const Hero = () => {
         className="relative z-10 pb-4 text-left text-base font-semibold text-zinc-600 dark:text-zinc-400"
       >
         However, as the industry evolves and the ecosystem pivots toward UTXO-native capabilities, off-chain services,
-        and value-centric automation, it’s time to sunset these early-stage components to make way for the next era of
-        Nervos.
+        and value-centric automation, it&apos;s time to sunset these early-stage components to make way for the next era
+        of Nervos.
       </motion.p>
     </div>
   )
