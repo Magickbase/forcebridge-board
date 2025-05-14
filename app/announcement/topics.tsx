@@ -26,11 +26,11 @@ const Topics = () => {
               Key Announcement
             </h2>
             <p className="mt-4 text-left text-base/6 text-zinc-300">
-              We hereby announce the official sunset of Force Bridge and Godwoken, beginning
+              We hereby announce the official sunset of Force Bridge and Godwoken, beginning&nbsp;
               <time dateTime="2025-06-01">June 1, 2025 (UTC+0)</time>. This phased shutdown process is designed to
               provide users with ample time to exit smoothly and ensure transparency throughout the transition. All
-              updates will be shared on the
-              <Link href="/" className="underline underline-offset-2 ml-[0.5ch]">
+              updates will be shared on the&nbsp;
+              <Link href="/" className="underline underline-offset-2">
                 Sunset Hub
               </Link>
               .
