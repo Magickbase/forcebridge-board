@@ -105,8 +105,18 @@ const Topics = () => {
           </h2>
           <ul className="ml-4 mt-4 list-disc">
             <li>
-              For Force Bridge, unclaimed funds may be transferred to a CKB DAO, subject to future community governance
-              decisions.
+              For Force Bridge, any remaining funds after the exit time-frame will be retained in Force Bridge. Users
+              can contact the&nbsp;
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://discord.gg/GBYYgBA9s7"
+                className="underline underline-offset-2"
+              >
+                Magickbase
+              </Link>
+              &nbsp;team for fund retrieval. Please note that inactivity fee may be applied based on the duration since
+              the sunset deadline. decisions.
             </li>
             <li>For Godwoken, unclaimed funds will no longer retrievable through standard front-end interface.</li>
             <li>
