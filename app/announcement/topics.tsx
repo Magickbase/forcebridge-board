@@ -116,7 +116,7 @@ const Topics = () => {
                 Magickbase
               </Link>
               &nbsp;team for fund retrieval. Please note that inactivity fee may be applied based on the duration since
-              the sunset deadline. decisions.
+              the sunset deadline.
             </li>
             <li>For Godwoken, unclaimed funds will no longer retrievable through standard front-end interface.</li>
             <li>
