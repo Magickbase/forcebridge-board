@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: `
 Over the past few years, Force Bridge and Godwoken have played pivotal roles in expanding the Nervos CKB ecosystem — enabling multi-chain asset interoperability, EVM compatibility, and DApp development. These two products marked Nervos' first major steps toward a layered architecture and cross-chain infrastructure.
 
-However, as the industry evolves and the ecosystem pivots toward UTXO-native capabilities, off-chain services, and value-centric automation, it’s time to sunset these early-stage components to make way for the next era of Nervos.`
+However, as the industry evolves and the ecosystem pivots toward UTXO-native Innovation, Web5, and Fiber Network, it’s time to sunset these early-stage components to make way for the next era of Nervos.`
 }
 
 const Announcement = () => {
