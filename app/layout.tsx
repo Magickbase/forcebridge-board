@@ -7,6 +7,7 @@ import './globals.css'
 import { TooltipProvider, TooltipTrigger, Tooltip, TooltipContent } from '@radix-ui/react-tooltip'
 import { IconBrandDiscordFilled } from '@tabler/icons-react'
 import { MAGICKBASE_URL } from '@/lib/const'
+import { StickyBanner } from '@/components/ui/sticky-banner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,6 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600">
+          <p className="mx-0 text-sm max-w-[90%] text-white drop-shadow-md">
+            We’ve detected abnormal activity on Force Bridge and have paused the service as a precaution. Our team is
+            investigating. Updates will be shared ASAP. Thank you for your patience.
+          </p>
+        </StickyBanner>
         <Navbar />
         {children}
         <Nav />
