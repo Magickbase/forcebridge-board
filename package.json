@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "dump:token-list": "bun run ./scripts/dump-tokens.ts",
-    "dump:data": "bun run ./scripts/dump-data.ts"
+    "dump:data": "bun run ./scripts/dump-data.ts",
+    "dump:cells": "bun run ./scripts/dump-cells.ts"
   },
   "dependencies": {
     "@nervosnetwork/ckb-sdk-core": "^0.109.5",

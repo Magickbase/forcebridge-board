@@ -25,6 +25,10 @@ export const getCells = (typeScript: Record<'code_hash' | 'hash_type' | 'args', 
     .then((res) => res.result as {
       last_cursor: string | '0x';
       objects: Array<{
+        out_point :{
+          tx_hash: string
+          index: string
+        }
         output: {
           capacity: string
           lock: {
