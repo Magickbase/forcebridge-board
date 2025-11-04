@@ -150,13 +150,15 @@ export default function Home() {
           <li>
             <div className="flex gap-2 justify-between">
               <b>Godwoken Exit Ends:</b>
-              <time dateTime="2025-10-31">Oct. 31, 2025</time>
+              <del>Oct. 31, 2025</del>
+              <time dateTime="2026-01-01">Jan. 1, 2026</time>
             </div>
           </li>
           <li>
             <div className="flex gap-2 justify-between">
               <b>Force Bridge Exit Ends:</b>
-              <time dateTime="2025-11-30">Nov. 30, 2025</time>
+              <del>Nov. 30, 2025</del>
+              <time dateTime="2026-01-16">Jan. 16, 2026</time>
             </div>
           </li>
         </ul>

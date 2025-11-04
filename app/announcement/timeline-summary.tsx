@@ -192,7 +192,11 @@ const cards = [
 
   {
     title: 'Godwoken Exit Window',
-    description: 'June 1 – October 31, 2025',
+    description: (
+      <span>
+        June 1 – <del>October 31, 2025</del> January 1, 2026
+      </span>
+    ),
     ctaText: 'Detail',
     content: () => {
       return (
@@ -203,7 +207,7 @@ const cards = [
               href={GODWOKEN_BRIDGE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 ml-[0.5ch] underline-offset-2"
+              className="underline ml-[0.5ch] underline-offset-2"
             >
               Godwoken Bridge
             </Link>
@@ -219,7 +223,11 @@ const cards = [
   },
   {
     title: 'Force Bridge Exit Window',
-    description: 'June 1 – November 30, 2025',
+    description: (
+      <span>
+        June 1 – <del>November 30, 2025</del> January 16, 2026
+      </span>
+    ),
     ctaText: 'Detail',
     content: () => {
       return (
@@ -230,13 +238,13 @@ const cards = [
               href={FORCE_BRIDGE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 ml-[0.5ch] underline-offset-2"
+              className="underline ml-[0.5ch] underline-offset-2"
             >
               Force Bridge
             </Link>
             .
           </li>
-          <li>
+          <li className="hidden">
             On December 1, 2025, the Force Bridge will shut down, and a final snapshot of remaining funds will be
             published.
           </li>
