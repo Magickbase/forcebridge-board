@@ -158,7 +158,7 @@ const Topics = () => {
                   >
                     Godwoken Bridge
                   </LinkPreview>
-                  &nbsp;before October 31, 2025
+                  &nbsp;before <del>October 31, 2025</del> January 1, 2026
                 </li>
                 <li>
                   Withdraw assets from Force Bridge using the&nbsp;
@@ -170,7 +170,7 @@ const Topics = () => {
                   >
                     Force Bridge
                   </LinkPreview>
-                  &nbsp;UI before November 30, 2025
+                  &nbsp;UI before <del>November 30, 2025</del> January 16, 2026
                 </li>
                 <li>
                   Stay tuned for bi-weekly reports on the&nbsp;
